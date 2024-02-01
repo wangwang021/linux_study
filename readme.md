@@ -74,3 +74,27 @@ example 可以是文件夹或者文件 也可以是多个文件 以空格分开
 
 `ln -s /home/wc /home/wc2`
 > -s表示软链接 软链接就是文件的快捷方式
+
+### 五 用户管理
+
+#### 1.创建用户
+
+`sudo useradd -m wc1`
+> -m表示在/home下创建用户目录
+
+#### 2.修改用户密码
+
+`sudo passwd wc1`
+
+#### 3.删除用户
+
+`sudo userdel wc1`
+
+#### 4.给root用户设置密码
+
+`sudo passwd root`
+
+#### 5.切换到root用户
+
+`su root`
+
