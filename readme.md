@@ -20,34 +20,34 @@
 
 `cd /home/wc`
 
-### 二 目录操作
+### 二 文件和目录操作
 
 #### 1.创建目录
 
 `mkdir /home/wc`
 -p 创建多级目录
 
-#### 2.删除目录
+#### 2.删除文件或目录
 
 `rm -rf /home/wc`
 -r递归删除，-f强制删除 不加参数只能删除空目录
 
-#### 3.复制目录
+#### 3.复制文件或目录
 
 `cp -rf /home/wc /home/wc2`
 -r递归复制，-f强制复制
 
-#### 4.移动目录
+#### 4.移动文件或目录（可以改名）
 
 `mv -rf /home/wc /home/wc2`
 -r递归移动，-f强制移动
 
-#### 5.修改权限
+#### 5.修改文件或目录权限
 
 `chmod o+w /home/wc/1.txt`
 o表示其他用户(other)，+w表示可写 可以让别人也可以修改1.txt文件
 
-`chomd a-w /home/wc/1.txt`
+`chmod a-w /home/wc/1.txt`
 a表示所有用户(all)，-w表示不可写 可以让所有人不可修改1.txt文件
 
 u表示当前用户，g表示组  
@@ -55,6 +55,34 @@ u表示当前用户，g表示组
 -r表示不可读  
 +x表示可执行  
 -x表示不可执行
+
+#### 6.其它命令
+
+##### echo命令
+将内容输出到控制台  
+`echo hello world!`
+将内容输出到文件  
+`echo hello world! > /home/wc/1.txt`
+将内容追加到文件  
+`echo hello world! >> /home/wc/1.txt`
+将文件内容输出到控制台  
+
+##### cat命令
+
+`cat /home/wc/1.txt`
+显示文件内容
+
+##### head命令
+
+`head -n 10 /home/wc/1.txt`
+显示文件前10行内容  
+
+#### tail命令
+
+`tail -n 10 /home/wc/1.txt`
+显示文件后10行内容  
+`tail -f /home/wc/1.txt`
+实时显示文件内容，当文件内容发生变化时，会实时显示  
 
 ### 三 归档压缩
 
@@ -182,3 +210,34 @@ NNNN表示进程号，可以指定进程号，不指定默认查看当前用户�
 `kill -9 NNNN`
 NNNN表示进程号，可以指定进程号，不指定默认查看当前用户所有进程  
 
+
+### 八 其他实用指令
+
+#### 1.日期命令
+
+`date` 显示当前日期  
+`date +%Y-%m-%d` 显示当前日期 以年-月-日格式显示  
+`date "+%Y-%m-%d %H:%M:%S"` 显示当前日期和时间 以年-月-日 时:分:秒格式显示  
+`date -s "2018-01-01 00:00:00"` 修改系统时间  
+
+#### 2.查找指令
+
+##### find命令
+
+`find /home/wc -name "*.txt"`
+/home/wc表示搜索的目录，-name表示搜索文件名，*.txt表示搜索txt文件  
+`find /home/wc -size +100`
+-size表示搜索文件大小，+100表示搜索大于100的文件  
+`find ~ -size +20M`
++20M表示搜索大于20M的文件
+`-atime 按放文件件 -ctime 按状态时间 -mtime 按修改时间 -type 按文件类型`
+
+
+##### grep命令
+
+在文件中搜索字符串
+`grep "hello" /home/wc/1.txt`
+/home/wc/1.txt表示搜索的文件，hello表示搜索的字符串
+`grep wc /home/wc/1.txt`
+/home/wc/1.txt表示搜索的文件，wc表示搜索的字符串
+`-n 显示匹配行号`
