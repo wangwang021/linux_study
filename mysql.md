@@ -21,6 +21,9 @@
 ### 4.3 查询所有数据库名
 `show databases;`
 
+### 4.4 切换到数据库
+`use test;`
+
 ## 5. mysql表操作命令
 ### 5.1 查询数据库表名
 `show tables;`
@@ -35,6 +38,23 @@
     age int comment '年龄',
     sex varchar(10) comment '性别',
     );`
+
+### 5.4 修改表
+
+#### 添加字段
+`alter table test add column address varchar(20) comment '地址';`
+
+#### 修改字段
+`alter table test modify column name varchar(20) comment '姓名';`
+
+#### 删除字段
+`alter table test drop column address;`
+
+#### 修改表名
+`alter table test rename to test1;`
+
+### 5.5 删除表
+`drop table test1;`
 
 ## 6. mysql数据操作命令
 
