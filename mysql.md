@@ -45,7 +45,7 @@
 `alter table test add column address varchar(20) comment '地址';`
 
 #### 修改字段
-`alter table test modify column name varchar(20) comment '姓名';`
+`alter table test modify column name varchar(20) comment '姓名';`  
 `alter table test change column name varchar(20) comment '姓名';`
 
 #### 删除字段
