@@ -32,12 +32,14 @@
 `desc test;`
 
 ### 5.3 创建表
-`create table test (
+```sql
+create table test (
     id int, name varchar(20) comment 'id',
     name varchar(20) comment '姓名',
     age int comment '年龄',
     sex varchar(10) comment '性别',
-    );`
+    );
+```
 
 ### 5.4 修改表
 
